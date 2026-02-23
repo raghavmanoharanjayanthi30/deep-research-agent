@@ -1,0 +1,156 @@
+{
+  "evalset_version": "1.0",
+  "results": [
+    {
+      "case_id": "case_ftx_sbf",
+      "target": "Sam Bankman-Fried",
+      "canonical_name": "Sam Bankman-Fried",
+      "runtime_s": 748.5857107639313,
+      "structural": {
+        "topics": {
+          "identity": {
+            "status": "complete",
+            "missing_fields": [],
+            "required_fields": [
+              "name_variants",
+              "date_of_birth",
+              "nationalities",
+              "general_location",
+              "associated_orgs"
+            ],
+            "field_coverage": 1.0,
+            "evidence_ids_total": 5,
+            "good_evidence_ids": 5,
+            "min_credibility": 0.0
+          },
+          "professional_timeline": {
+            "status": "partial",
+            "missing_fields": [
+              "board_positions"
+            ],
+            "required_fields": [
+              "roles",
+              "employers",
+              "board_positions",
+              "education",
+              "role_dates"
+            ],
+            "field_coverage": 0.8,
+            "evidence_ids_total": 8,
+            "good_evidence_ids": 8,
+            "min_credibility": 0.0
+          },
+          "legal_regulatory": {
+            "status": "complete",
+            "missing_fields": [],
+            "required_fields": [
+              "criminal_records",
+              "civil_cases",
+              "regulatory_actions",
+              "sanctions_list_mentions",
+              "court_involvement"
+            ],
+            "field_coverage": 1.0,
+            "evidence_ids_total": 6,
+            "good_evidence_ids": 6,
+            "min_credibility": 0.0
+          },
+          "risk_inconsistencies": {
+            "status": "unstarted",
+            "missing_fields": [
+              "identity_conflicts",
+              "employment_conflicts",
+              "ownership_conflicts",
+              "timeline_gaps",
+              "misrepresentation_indicators"
+            ],
+            "required_fields": [
+              "identity_conflicts",
+              "employment_conflicts",
+              "ownership_conflicts",
+              "timeline_gaps",
+              "misrepresentation_indicators"
+            ],
+            "field_coverage": 0.0,
+            "evidence_ids_total": 0,
+            "good_evidence_ids": 0,
+            "min_credibility": 0.0
+          }
+        },
+        "overall": {
+          "topics_complete": 2,
+          "topics_total": 4,
+          "field_coverage_avg": 0.7,
+          "distinct_source_urls": 38
+        }
+      },
+      "expected_field_hits": {
+        "identity": {
+          "name_variants": true,
+          "date_of_birth": null,
+          "nationalities": true,
+          "general_location": false,
+          "associated_orgs": true
+        },
+        "professional_timeline": {
+          "employers": true,
+          "roles": true,
+          "education": null
+        },
+        "legal_regulatory": {
+          "criminal_records": true,
+          "civil_cases": true,
+          "court_roles": true
+        },
+        "risk_inconsistencies": {
+          "misrepresentation_indicators": false,
+          "timeline_gaps": false,
+          "identity_conflicts": null,
+          "employment_conflicts": null,
+          "ownership_conflicts": null
+        }
+      },
+      "baseline_fact_hits": [
+        {
+          "id": "sbf_ftx_founder",
+          "covered": true,
+          "partial_score": 1.0
+        },
+        {
+          "id": "sbf_sentenced_25_years",
+          "covered": false,
+          "partial_score": 0.0
+        },
+        {
+          "id": "sbf_customer_funds",
+          "covered": false,
+          "partial_score": 0.0
+        }
+      ],
+      "llm_judge": {
+        "facts": [
+          {
+            "id": "sbf_ftx_founder",
+            "covered": true,
+            "confidence": 0.9,
+            "evidence_in_report": "2019\u20132022: FTX \u2014 Founder and CEO"
+          },
+          {
+            "id": "sbf_sentenced_25_years",
+            "covered": false,
+            "confidence": 0.0,
+            "evidence_in_report": ""
+          },
+          {
+            "id": "sbf_customer_funds",
+            "covered": false,
+            "confidence": 0.0,
+            "evidence_in_report": ""
+          }
+        ],
+        "overall_score": 0.3
+      },
+      "report_text": "TARGET: Sam Bankman-Fried\n\nTOPIC: identity\nstatus: complete\n- name_variants: ['Samuel Benjamin Bankman-Fried', 'SBF']\n- date_of_birth: ['March 6, 1992']\n- nationalities: ['American']\n- general_location: ['Stanford, California, U.S.']\n- associated_orgs: ['FTX', 'Alameda Research']\n\nTOPIC: professional_timeline\nstatus: partial\n- roles: ['2019\u20132022: FTX \u2014 Founder and CEO', '2017: Jane Street Capital \u2014 Trader', '2019\u20132022: FTX Trading Ltd. \u2014 Founder and CEO', 'Co-founder of Alameda Research']\n- employers: ['Alameda Research', 'FTX']\n- board_positions: []\n- education: ['2010\u20132014: Massachusetts Institute of Technology \u2014 Physics major, Math minor']\n- role_dates: ['2017\u20132022: Alameda Research', '2019\u20132022: FTX']\n\nTOPIC: legal_regulatory\nstatus: complete\n- criminal_records: ['Charged with wire fraud, securities fraud, and money laundering']\n- civil_cases: ['United States v. Samuel Bankman-Fried, 22 Cr. 673 (LAK)']\n- regulatory_actions: ['CFTC charges for violations of the Commodity Exchange Act']\n- sanctions_list_mentions: ['Convicted on all charges, sentencing scheduled for March 28, 2024']\n- court_involvement: ['CFTC charges for fraud and material misrepresentations']\n\nTOPIC: risk_inconsistencies\nstatus: unstarted\n- identity_conflicts: []\n- employment_conflicts: []\n- ownership_conflicts: []\n- timeline_gaps: []\n- misrepresentation_indicators: []"
+    }
+  ]
+}

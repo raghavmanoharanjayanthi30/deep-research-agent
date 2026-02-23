@@ -1,0 +1,154 @@
+{
+  "evalset_version": "1.0",
+  "results": [
+    {
+      "case_id": "case_theranos_holmes",
+      "target": "Elizabeth Holmes",
+      "canonical_name": "Elizabeth Holmes",
+      "runtime_s": 564.4446511268616,
+      "structural": {
+        "topics": {
+          "identity": {
+            "status": "complete",
+            "missing_fields": [],
+            "required_fields": [
+              "name_variants",
+              "date_of_birth",
+              "nationalities",
+              "general_location",
+              "associated_orgs"
+            ],
+            "field_coverage": 1.0,
+            "evidence_ids_total": 6,
+            "good_evidence_ids": 6,
+            "min_credibility": 0.0
+          },
+          "professional_timeline": {
+            "status": "complete",
+            "missing_fields": [],
+            "required_fields": [
+              "roles",
+              "employers",
+              "board_positions",
+              "education",
+              "role_dates"
+            ],
+            "field_coverage": 1.0,
+            "evidence_ids_total": 4,
+            "good_evidence_ids": 4,
+            "min_credibility": 0.0
+          },
+          "legal_regulatory": {
+            "status": "complete",
+            "missing_fields": [],
+            "required_fields": [
+              "criminal_records",
+              "civil_cases",
+              "regulatory_actions",
+              "sanctions_list_mentions",
+              "court_involvement"
+            ],
+            "field_coverage": 1.0,
+            "evidence_ids_total": 5,
+            "good_evidence_ids": 5,
+            "min_credibility": 0.0
+          },
+          "risk_inconsistencies": {
+            "status": "unstarted",
+            "missing_fields": [
+              "identity_conflicts",
+              "employment_conflicts",
+              "ownership_conflicts",
+              "timeline_gaps",
+              "misrepresentation_indicators"
+            ],
+            "required_fields": [
+              "identity_conflicts",
+              "employment_conflicts",
+              "ownership_conflicts",
+              "timeline_gaps",
+              "misrepresentation_indicators"
+            ],
+            "field_coverage": 0.0,
+            "evidence_ids_total": 0,
+            "good_evidence_ids": 0,
+            "min_credibility": 0.0
+          }
+        },
+        "overall": {
+          "topics_complete": 3,
+          "topics_total": 4,
+          "field_coverage_avg": 0.75,
+          "distinct_source_urls": 40
+        }
+      },
+      "expected_field_hits": {
+        "identity": {
+          "name_variants": false,
+          "date_of_birth": true,
+          "nationalities": true,
+          "general_location": true,
+          "associated_orgs": true
+        },
+        "professional_timeline": {
+          "employers": true,
+          "education": true,
+          "roles": true
+        },
+        "legal_regulatory": {
+          "criminal_records": true,
+          "civil_cases": true,
+          "court_roles": false
+        },
+        "risk_inconsistencies": {
+          "misrepresentation_indicators": false,
+          "timeline_gaps": false,
+          "identity_conflicts": null,
+          "employment_conflicts": null,
+          "ownership_conflicts": null
+        }
+      },
+      "baseline_fact_hits": [
+        {
+          "id": "eh_theranos_founder",
+          "covered": true,
+          "partial_score": 1.0
+        },
+        {
+          "id": "eh_conviction_fraud",
+          "covered": false,
+          "partial_score": 0.0
+        },
+        {
+          "id": "eh_blood_testing_claims",
+          "covered": false,
+          "partial_score": 0.0
+        }
+      ],
+      "llm_judge": {
+        "facts": [
+          {
+            "id": "eh_theranos_founder",
+            "covered": true,
+            "confidence": 0.9,
+            "evidence_in_report": "2003\u20132018: Theranos \u2014 Founder and CEO"
+          },
+          {
+            "id": "eh_conviction_fraud",
+            "covered": true,
+            "confidence": 0.8,
+            "evidence_in_report": "Guilty of criminal fraud on four counts"
+          },
+          {
+            "id": "eh_blood_testing_claims",
+            "covered": false,
+            "confidence": 0.0,
+            "evidence_in_report": ""
+          }
+        ],
+        "overall_score": 0.57
+      },
+      "report_text": "TARGET: Elizabeth Holmes\n\nTOPIC: identity\nstatus: complete\n- name_variants: ['Elizabeth Anne Holmes']\n- date_of_birth: ['February 3, 1984']\n- nationalities: ['American']\n- general_location: ['California, United States']\n- associated_orgs: ['Theranos']\n\nTOPIC: professional_timeline\nstatus: complete\n- roles: ['2003\u20132018: Theranos \u2014 Founder and CEO']\n- employers: ['Theranos']\n- board_positions: ['Harvard Medical School\u2019s Board of Fellows']\n- education: ['Stanford University (2002-2004)']\n- role_dates: ['2003\u20132018: Theranos \u2014 Founder and CEO']\n\nTOPIC: legal_regulatory\nstatus: complete\n- criminal_records: ['Guilty of criminal fraud on four counts']\n- civil_cases: ['Theranos ABC lawsuit for unpaid promissory notes']\n- regulatory_actions: ['SEC charges for fraud']\n- sanctions_list_mentions: ['Elizabeth Holmes was banned from running a publicly traded company for ten years as part of a settlement with the SEC in 2018.']\n- court_involvement: ['United States v. Elizabeth Holmes']\n\nTOPIC: risk_inconsistencies\nstatus: unstarted\n- identity_conflicts: []\n- employment_conflicts: []\n- ownership_conflicts: []\n- timeline_gaps: []\n- misrepresentation_indicators: []"
+    }
+  ]
+}

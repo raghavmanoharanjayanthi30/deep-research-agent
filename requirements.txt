@@ -1,0 +1,5 @@
+pymupdf>=1.24.0
+trafilatura>=1.8.0
+langchain-openai>=0.1.0
+langgraph>=0.1.0
+tavily-python>=0.3.0

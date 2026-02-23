@@ -1,0 +1,159 @@
+{
+  "version": "1.0",
+  "notes": "Risk-focused eval personas. Each case includes an optional disambiguation_hint so offline eval can auto-resolve identity. expected_facts are scored with keyword baseline + LLM judge.",
+  "cases": [
+    {
+      "id": "case_theranos_holmes",
+      "target": "Elizabeth Holmes",
+      "disambiguation_hint": "Theranos founder",
+      "max_iterations": 4,
+      "k_queries": 6,
+      "expected": {
+        "identity": {
+          "name_variants": ["Elizabeth Holmes"],
+          "date_of_birth": ["1984"],
+          "nationalities": ["American", "United States"],
+          "general_location": ["United States", "California"],
+          "associated_orgs": ["Theranos"]
+        },
+        "professional_timeline": {
+          "employers": ["Theranos"],
+          "education": ["Stanford"],
+          "roles": ["CEO", "founder"]
+        },
+        "legal_regulatory": {
+          "criminal_records": ["fraud", "wire fraud"],
+          "civil_cases": ["SEC"],
+          "court_involvement": ["sentenced", "convicted"]
+        },
+        "risk_inconsistencies": {
+          "misrepresentation_indicators": ["blood testing", "misled", "false", "inaccurate"],
+          "timeline_gaps": ["Theranos"],
+          "identity_conflicts": [],
+          "employment_conflicts": [],
+          "ownership_conflicts": []
+        }
+      },
+      "expected_facts": [
+        {
+          "id": "eh_theranos_founder",
+          "must_mention": ["Theranos"],
+          "should_mention": ["founder", "CEO"],
+          "why_it_matters": "Core identity + professional anchor"
+        },
+        {
+          "id": "eh_conviction_fraud",
+          "must_mention": ["convicted"],
+          "should_mention": ["wire fraud", "fraud", "conspiracy"],
+          "why_it_matters": "Core legal risk finding"
+        },
+        {
+          "id": "eh_blood_testing_claims",
+          "must_mention": ["blood"],
+          "should_mention": ["testing", "technology", "claims", "misled"],
+          "why_it_matters": "Misrepresentation indicator"
+        }
+      ]
+    },
+    {
+      "id": "case_ftx_sbf",
+      "target": "Sam Bankman-Fried",
+      "disambiguation_hint": "FTX founder",
+      "max_iterations": 4,
+      "k_queries": 6,
+      "expected": {
+        "identity": {
+          "name_variants": ["Sam Bankman-Fried", "SBF"],
+          "date_of_birth": [],
+          "nationalities": ["American", "United States"],
+          "general_location": ["United States"],
+          "associated_orgs": ["FTX", "Alameda Research"]
+        },
+        "professional_timeline": {
+          "employers": ["FTX", "Alameda Research"],
+          "roles": ["founder", "CEO"],
+          "education": []
+        },
+        "legal_regulatory": {
+          "criminal_records": ["fraud"],
+          "civil_cases": ["SEC", "CFTC"],
+          "court_involvement": ["sentenced", "convicted"]
+        },
+        "risk_inconsistencies": {
+          "misrepresentation_indicators": ["customer funds", "misused", "stole", "diverted"],
+          "timeline_gaps": ["FTX collapse"],
+          "identity_conflicts": [],
+          "employment_conflicts": [],
+          "ownership_conflicts": []
+        }
+      },
+      "expected_facts": [
+        {
+          "id": "sbf_ftx_founder",
+          "must_mention": ["FTX"],
+          "should_mention": ["founder", "CEO"],
+          "why_it_matters": "Core identity + professional anchor"
+        },
+        {
+          "id": "sbf_sentenced_25_years",
+          "must_mention": ["25"],
+          "should_mention": ["years", "sentenced"],
+          "why_it_matters": "High-signal legal outcome"
+        },
+        {
+          "id": "sbf_customer_funds",
+          "must_mention": ["customers"],
+          "should_mention": ["funds", "misused", "diverted", "stole"],
+          "why_it_matters": "Risk mechanism"
+        }
+      ]
+    },
+    {
+      "id": "case_shkreli",
+      "target": "Martin Shkreli",
+      "disambiguation_hint": "pharma bro securities",
+      "max_iterations": 4,
+      "k_queries": 6,
+      "expected": {
+        "identity": {
+          "name_variants": ["Martin Shkreli"],
+          "date_of_birth": [],
+          "nationalities": ["American", "United States"],
+          "general_location": ["United States"],
+          "associated_orgs": ["Turing Pharmaceuticals"]
+        },
+        "professional_timeline": {
+          "employers": ["Turing Pharmaceuticals"],
+          "roles": ["CEO"],
+          "education": []
+        },
+        "legal_regulatory": {
+          "criminal_records": ["securities fraud"],
+          "civil_cases": [],
+          "court_involvement": ["convicted"]
+        },
+        "risk_inconsistencies": {
+          "misrepresentation_indicators": ["securities fraud", "investors"],
+          "timeline_gaps": [],
+          "identity_conflicts": [],
+          "employment_conflicts": [],
+          "ownership_conflicts": []
+        }
+      },
+      "expected_facts": [
+        {
+          "id": "shkreli_turing",
+          "must_mention": ["Turing"],
+          "should_mention": ["CEO", "Pharmaceuticals"],
+          "why_it_matters": "Core professional anchor"
+        },
+        {
+          "id": "shkreli_securities_fraud",
+          "must_mention": ["securities fraud"],
+          "should_mention": ["convicted", "guilty"],
+          "why_it_matters": "Core legal risk finding"
+        }
+      ]
+    }
+  ]
+}
